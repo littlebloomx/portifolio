@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Perfil de littlebloomx_ com redes sociais e música de fundo.">
+    <meta name="author" content="littlebloomx_">
+    <meta property="og:title" content="Perfil de littlebloomx_" />
+    <meta property="og:description" content="Perfil com links sociais e música de fundo." />
+    <meta property="og:image" content="novinha.jpg" />
+    <meta property="og:url" content="https://seusite.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Meu Perfil</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="conteudo-principal">
+        <audio id="bg-music" loop>
+            <source src="are.mp3" type="audio/mp3" />
+        </audio>
+        <button onclick="toggleMusic()" class="botao-musica" aria-label="Tocar ou pausar música">
+            <i class="fas fa-play"></i> Música
+        </button>
+        <div class="fundo"></div>
+        <div class="cartao-perfil" id="cartaoPerfil">
+            <div class="banner">
+                <img src="my-girl.jpg" class="imagem-banner" alt="Banner do perfil" />
+            </div>
+            <img src="novinha.jpg" class="foto-perfil" alt="Foto de perfil de littlebloomx_" />
+            <div>
+                <h1 class="titulo-digitado" id="titulo" aria-live="polite"></h1>
+            </div>
+            <span class="cursor-digitacao"></span>
+            <p class="bio">"valorant"</p>
+            <div class="links-sociais">
+                <a href="https://www.instagram.com/littlebloomx_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/maquezs_" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@littlebloomx_" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://soundcloud.com/max_edits/" target="_blank" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                <a href="https://www.tiktok.com/@littlebloomx_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://github.com/littlebloomx" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="painel-especialidades" id="painelEspecialidades">
+            <h2>Especialidades, hobby</h2>
+            <h3>Linguagens</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+            <h3>Valorant</h3>
+            <ul>
+                <li>Elo: PRATA 1</li>
+                <li>Level: 450</li>
+                <li>Main: Omen</li>
+                <li>Nametag: I love asíaticas#plug</li>
+            </ul>
+            <h3>Tênis de mesa</h3>
+            <ul>
+                <li>sou ruim</li>
+            </ul>
+        </div>
+        <button class="botao-alternar" onclick="toggleSpecialties()" aria-label="Abrir ou fechar painel de especialidades">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="painel-projetos" id="painelProjetos">
+            <h2>Meus Projetos</h2>
+            <div class="container-projetos">
+                <div class="cartao-projeto">
+                    <h3>🎵 MUSICBOARD</h3>
+                    <p>Interface estilosa para ouvir músicas de forma prática e personalizada.</p>
+                    <a href="https://littlebloomx.github.io/MUSICBOARD/" target="_blank" class="link-projeto">Acessar Projeto</a>
+                </div>
+                <div class="cartao-projeto">
+                    <h3>🎮 Valorant+</h3>
+                    <p>Projeto inspirado no universo de Valorant com foco visual e interativo.</p>
+                    <a href="https://littlebloomx.github.io/Valorantplus/" target="_blank" class="link-projeto">Acessar Projeto</a>
+                </div>
+            </div>
+        </div>
+        <button class="botao-projetos" onclick="toggleProjects()" aria-label="Abrir ou fechar painel de projetos">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+    <script>
+        function toggleProjects() {
+            const panelProjects = document.getElementById('painelProjetos');
+            const panelSpecialties = document.getElementById('painelEspecialidades');
+            const card = document.getElementById('cartaoPerfil');
+            const icon = document.querySelector('.botao-projetos i');
+            card.classList.toggle('mover-direita');
+            panelProjects.classList.toggle('aberto');
+            if (panelSpecialties.classList.contains('aberto')) {
+                panelSpecialties.classList.remove('aberto');
+                card.classList.remove('mover-esquerda');
+            }
+            icon.classList.toggle('fa-arrow-left');
+            icon.classList.toggle('fa-arrow-right');
+        }
+
+        function toggleSpecialties() {
+            const panelSpecialties = document.getElementById('painelEspecialidades');
+            const panelProjects = document.getElementById('painelProjetos');
+            const card = document.getElementById('cartaoPerfil');
+            const icon = document.querySelector('.botao-alternar i');
+            card.classList.toggle('mover-esquerda');
+            panelSpecialties.classList.toggle('aberto');
+            if (panelProjects.classList.contains('aberto')) {
+                panelProjects.classList.remove('aberto');
+                card.classList.remove('mover-direita');
+            }
+            icon.classList.toggle('fa-arrow-right');
+            icon.classList.toggle('fa-arrow-left');
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("bg-music");
+            const icon = document.querySelector('.botao-musica i');
+            if (audio.paused) {
+                audio.play().catch(() => console.log("Autoplay bloqueado."));
+                icon.classList.replace('fa-play', 'fa-pause');
+            } else {
+                audio.pause();
+                icon.classList.replace('fa-pause', 'fa-play');
+            }
+        }
+        document.addEventListener('click', () => {
+            const audio = document.getElementById("bg-music");
+            if (audio.paused) audio.play().catch(() => console.log("Autoplay bloqueado."));
+        }, { once: true });
+        const titleText = "littlebloomx_";
+        const titleElement = document.getElementById("titulo");
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingDelay = 150;
+        let deletingDelay = 50;
+        let newTextDelay = 2000;
+        function typeTitle() {
+            if (!isDeleting && charIndex < titleText.length) {
+                titleElement.textContent = titleText.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeTitle, typingDelay);
+            } else if (isDeleting && charIndex > 0) {
+                titleElement.textContent = titleText.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeTitle, deletingDelay);
+            } else if (charIndex === titleText.length) {
+                isDeleting = true;
+                setTimeout(typeTitle, newTextDelay);
+            } else if (charIndex === 0) {
+                isDeleting = false;
+                setTimeout(typeTitle, typingDelay);
+            }
+        }
+        typeTitle();
+    </script>
+</body>
+</html>
